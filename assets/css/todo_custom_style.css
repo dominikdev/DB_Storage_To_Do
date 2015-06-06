@@ -1,0 +1,126 @@
+
+.navbar-custom {
+     background-color:#337ab7;
+     border-radius: 0px;
+     padding-bottom: 5px;
+}
+.navbar-custom .navbar-brand{
+     color:white;
+}
+
+#new-list-input.hidden {
+     display: none;
+}
+#new-list-input {
+     display: block;
+}
+
+.complete {
+     opacity: 0.5;
+}
+
+
+
+
+
+#current-list-title {
+     cursor: pointer;
+     transition: color 0.5s ease;
+}
+
+#current-list-title:hover {
+     color: rgba(0,0,0,0.3);
+}
+
+.list-title span {
+     visibility: hidden;
+     cursor: pointer;
+}
+.list-title h4:hover span {
+     visibility: visible;
+}
+
+.list-title.showdelete span{
+     visibility: visible;
+}
+
+.list-item {
+     padding:0px 0px;
+     border-top: 1px solid rgba(0,0,0,0.1);
+     overflow: auto;
+}
+.list-item.dragover{
+     border-bottom:2px solid rgba(0,0,0,0.1) !important;
+}
+.list-item div{
+     padding:5px 10px;
+}
+.list-title{
+     cursor: default;
+}
+.list-title h4:hover {
+     color:rgba(0,0,0,0.5);
+}
+@media (max-width: 768px) { 
+     .priority-wrap {
+          border-right:1px solid rgba(0,0,0,0.1);
+     }
+}
+
+
+#list-item-wrapper .list-item:last-of-type {
+     border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+#loading {
+     position: absolute;
+     height: 100%;
+     width:100%;
+     background-color:white;
+     z-index: 9999;
+     opacity: 1.0;
+     transition: opacity 1s ease;
+}
+#loading.start-hiding{
+     opacity: 0.0;
+}
+
+.inner-loading {
+     width: 100%;
+     position: absolute;
+     top:50%;
+     font-size:50px;
+     color:white;
+     text-align: center;
+}
+
+.form-control-feedback {
+     display:none;
+}
+.has-error .form-control-feedback, .has-success .form-control-feedback {
+     display:block;
+}
+
+label span{
+     display: none;
+}
+.has-error label span{
+     display: inline;
+}
+
+.row {
+
+  margin-right: 0px;
+  margin-left: 0px;
+
+}
+
+.progress-bar.one {
+     width:33%;
+}
+.progress-bar.two {
+     width:66%;
+}
+.progress-bar.three {
+     width:100%;
+}
