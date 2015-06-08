@@ -48,8 +48,9 @@ function getListData(which){
                
             }
      }
-     xmlhttp.open("GET","getlistdata.php?dto="+which,true);
-        xmlhttp.send();
+     xmlhttp.open("POST","getlistdata.php",true);
+     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+     xmlhttp.send("dto="+which);
      
 }
 function updatePgBar(index){

@@ -13,7 +13,7 @@
      if($count == 1){
           $row = mysql_fetch_array($result);
      
-          $which_data = $_GET['dto'];
+          $which_data = $_POST['dto'];
 
           if($which_data == 1){
                echo $row['current_list'];
