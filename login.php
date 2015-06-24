@@ -75,13 +75,51 @@ session_start();
                </form>
           </div>  
      </div>
-     <div class="row">
+     <div class="row" style="padding-bottom:100px;">
           <div class="col-md-6 col-md-offset-3 text-center">
                <br>
                <a href="signup.php">Or Signup</a>
           </div>  
      </div>
-     
+     <div class="footer">
+          <div class="container-fluid">
+               <div class="row">
+                    <div class="col-md-12">
+                         <ul class="list-unstyled list-inline center-block text-center">
+                              <li><a href="http://www.github.com/dominikdev">GitHub</a></li>
+                              <li> | </li>
+                              <li><a href="https://twitter.com/DGrochowicz">Twitter</a></li>
+                              <li> | </li>
+                              <li><a href="https://www.linkedin.com/in/dgrochowicz">Linkedin</a></li>
+                         </ul>
+                    </div>
+               </div>
+               <div class="row">
+                    <div class="col-md-12">
+                         <ul class="list-unstyled list-inline center-block text-center">
+                              <li><a href="http://dominikdev.com/index.html">Home</a></li>
+                              <li> | </li>
+                              <li><a href="http://dominikdev.com/portfolio/index.html">Portfolio</a></li>
+                              <li> | </li>
+                              <li><a href="http://dominikdev.com/about/index.php">About</a></li>
+                              <li> | </li>
+                              <li><a href="http://dominikdev.com/blog/index.html">Blog</a></li>
+                         </ul>
+                    </div>
+               </div>
+               <div class="row">
+                    <div class="col-md-12">
+                         <ul class="list-unstyled list-inline center-block text-center">
+                              <li>Dominik Web Designer & Developer</li>
+                              <li class="hide-mobile"> | </li>
+                              <li>© All Rights Reserved 2015</li>
+                              <li class="hide-mobile"> | </li>
+                              <li><a href="mailto:contact@dominikdev.com" style="color:inherit;">Contact@DominikDev.com</a></li>
+                         </ul>
+                    </div>
+               </div>
+          </div>
+     </div><!-- End Footer -- >
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

@@ -1,18 +1,15 @@
 function thePageLoaded(){
      editingListTitle = false;
      loadedListData = new Array();
-     //mainToDoList = new ToDoList();
-     //mainToDoList.setupToDo();
-     //pullUpCurrentList();
-     //addListNav();
-     getListData(1);
-
+     retrieveUserData();
 }
+
+// INITIAL LOADING FUNCTIONS ----------------------------------------------------------------------
+
 function dataFinishedLoading(firstlogin){
      if(firstlogin){
           loadedListData = null;
      }
-     console.log("finished");
      document.getElementById('loading').setAttribute('class','start-hiding');
      setTimeout(function(){
           document.body.removeChild(document.getElementById('loading'));
@@ -23,34 +20,37 @@ function dataFinishedLoading(firstlogin){
      pullUpCurrentList();
      addListNav();
 }
-function getListData(which){
+function retrieveUserData(){
      if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
            var xmlhttp= new XMLHttpRequest();
         }
+     document.getElementById('loading-animation').setAttribute('class','is-loading');
      xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                var listData = xmlhttp.responseText;
-               //console.log(listData);
                if(listData == 'false'){
                     dataFinishedLoading(true);
                }
                else{
-                    var paData = JSON.parse(listData);
-                    loadedListData.push(paData);
-                    updatePgBar(which);
-                    if(which!=3){
-                         getListData(which+1);
-                    } else{
-                         dataFinishedLoading();
-                    }
+                    decodeListData(listData);         
                }
-               
             }
      }
-     xmlhttp.open("POST","getlistdata.php",true);
+     xmlhttp.open("POST","retrivedata.php",true);
      xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-     xmlhttp.send("dto="+which);
+     xmlhttp.send();
+}
+function decodeListData(data){
+     
+     var lsData = JSON.parse(data);
+     var allLsData = new Array()
+     
+     for(var x=0; x<lsData.length;x++){
+          allLsData.push(JSON.parse(lsData[x]));
+     }
+     
+     loadedListData = allLsData;
+     dataFinishedLoading();
      
 }
 function updatePgBar(index){
@@ -114,7 +114,6 @@ function editCurrentListTitle(){
           var listTitleWrap = document.getElementById('current-list-title');
           var curTitle = listTitleWrap.innerHTML;
           listTitleWrap.innerHTML = "";
-          //console.log(listTitleWrap.innerHTML);
           listTitleWrap.appendChild(updateListInput(curTitle.trim()));
      }
 

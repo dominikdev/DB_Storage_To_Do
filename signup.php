@@ -46,7 +46,6 @@ session_start();
                          $email = $_POST['email']; 
                          $pass = crypt($_POST['userpassword'], CRYPT_BLOWFISH);
                          $hash = md5( rand(0,1000) );
-                         $tbl_name = ""//USERS TABLE IN DB
                          if(!eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$", $email)){
                              $msg = "<label class='alert alert-danger center-block'>The email you have entered is invalid, please try again.</label>";
                          }else{
@@ -55,7 +54,7 @@ session_start();
                          if(isset($msg)){  
                             echo $msg; 
                         } 
-                         mysql_query("INSERT INTO $tbl_name(username, name, password, email, hash) VALUES(
+                         mysql_query("INSERT INTO users_todo (username, name, password, email, hash) VALUES(
                          '". mysql_escape_string($username)."', 
                          '". mysql_escape_string($name) ."', 
                          '". mysql_escape_string($pass) ."', 
@@ -78,8 +77,8 @@ session_start();
 
                          ';
 
-                         $headers = 'From:noreply@dominikdev.com' . "\r\n"; // Set from headers
-                         mail($to, $subject, $message, $headers); // Send our email
+                         $headers = 'From:noreply@dominikdev.com' . "\r\n"; 
+                         mail($to, $subject, $message, $headers); 
                     }
                ?>
           </div>  
@@ -116,12 +115,51 @@ session_start();
                </form>
           </div>  
      </div>
-     <div class="row">
+     <div class="row" style="padding-bottom:50px;">
           <div class="col-md-6 col-md-offset-3 text-center">
                <br>
                <a href="login.php">Or Login</a>
           </div>  
      </div>
+     <div class="footer">
+          <div class="container-fluid">
+               <div class="row">
+                    <div class="col-md-12">
+                         <ul class="list-unstyled list-inline center-block text-center">
+                              <li><a href="http://www.github.com/dominikdev">GitHub</a></li>
+                              <li> | </li>
+                              <li><a href="https://twitter.com/DGrochowicz">Twitter</a></li>
+                              <li> | </li>
+                              <li><a href="https://www.linkedin.com/in/dgrochowicz">Linkedin</a></li>
+                         </ul>
+                    </div>
+               </div>
+               <div class="row">
+                    <div class="col-md-12">
+                         <ul class="list-unstyled list-inline center-block text-center">
+                              <li><a href="http://dominikdev.com/index.html">Home</a></li>
+                              <li> | </li>
+                              <li><a href="http://dominikdev.com/portfolio/index.html">Portfolio</a></li>
+                              <li> | </li>
+                              <li><a href="http://dominikdev.com/about/index.php">About</a></li>
+                              <li> | </li>
+                              <li><a href="http://dominikdev.com/blog/index.html">Blog</a></li>
+                         </ul>
+                    </div>
+               </div>
+               <div class="row">
+                    <div class="col-md-12">
+                         <ul class="list-unstyled list-inline center-block text-center">
+                              <li>Dominik Web Designer & Developer</li>
+                              <li class="hide-mobile"> | </li>
+                              <li>© All Rights Reserved 2015</li>
+                              <li class="hide-mobile"> | </li>
+                              <li><a href="mailto:contact@dominikdev.com" style="color:inherit;">Contact@DominikDev.com</a></li>
+                         </ul>
+                    </div>
+               </div>
+          </div>
+     </div><!-- End Footer -- >
      
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

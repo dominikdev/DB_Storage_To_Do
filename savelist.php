@@ -5,7 +5,6 @@
 
      $user_id = $_SESSION["userid"];
      
-
      $current_list = $_POST['cl'];
      $list_titles = $_POST['lt'];
      $list_items = $_POST['li'];
@@ -22,5 +21,6 @@
      
       
      mysql_query($sql);
+
      echo mysql_error();
 ?>

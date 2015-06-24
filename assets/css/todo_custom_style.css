@@ -124,3 +124,42 @@ label span{
 .progress-bar.three {
      width:100%;
 }
+
+#list-item-wrapper {
+     min-height: 400px;
+     padding-bottom: 100px;
+}
+
+
+#loading-animation {
+     position: absolute;
+     top:50%;
+     left:50%;
+     width:200px;
+     margin-left: -100px;
+     margin-top: -50px;
+     height: 100px;
+     text-align: center;
+     
+     font-size: 100px;
+     line-height: 100px;
+     color: #337ab7;
+
+}
+
+#loading-animation.is-loading{
+     animation: mymove 2s infinite;
+     -webkit-animation: mymove 2s infinite;
+}
+
+@-webkit-keyframes mymove {
+    0%   {transform: rotate(0deg);}
+    50%  {transform: rotate(180deg);}
+    100% {transform: rotate(360deg);}
+} 
+@keyframes mymove {
+    0%   {transform: rotate(0deg);}
+    50%  {transform: rotate(180deg);}
+    100% {transform: rotate(360deg);}
+}      
+}
